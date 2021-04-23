@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Courses</h1>
+    {% for course in courses %}
+    <h5>{{ course.title }}</h5>
+    <p>{{ course.duration }} Day{{course.duration|pluralize}}</p>
+    <p>{{ course.min_delegates}} - {{course.max_delegates}} Delegate{{course.max_delegates|pluralize}} ({{course.type}})</p>
+    <p><s>£{{ course.rrp }}</s> £{{ course.ppp }}</p>
+    <p>{{ course.description }}</p>
+    <p>{{ course.assessment }}</p>
+    <hr>
+    {% endfor %}
+</body>
+</html>
